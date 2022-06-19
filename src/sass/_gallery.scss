@@ -1,0 +1,28 @@
+.gallery{
+    padding: 20px;
+    
+    display: flex;
+    align-items: space-around;
+    justify-content: center;
+
+    
+}
+.photo-card{
+    display: flex;
+  
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: center; 
+
+}
+.info{
+  
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: space-around;
+    justify-content: center;
+  
+}
+
+
