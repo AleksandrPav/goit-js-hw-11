@@ -9,6 +9,7 @@ const refs = {
     gallaryList: document.querySelector('.gallery')
 }
 console.log(refs);
+console.log(fetchImages('cat', 1, 10));
 
 
 function emptyArray() {
@@ -35,7 +36,7 @@ fetchImages(query).then(data => {
 );
 
 
-function renderGallery(dataImg) {
+function renderGallery(images) {
     const markup = dataImg.map(({largeImageURL,tags,likes,view,comments,downloads }) => {
         return `
 <div class="photo-card">
