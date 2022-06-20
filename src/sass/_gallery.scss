@@ -1,28 +1,51 @@
 .gallery{
-    padding: 20px;
-    
     display: flex;
-    align-items: space-around;
+    flex-wrap: wrap;
     justify-content: center;
-
+    padding: 60px 10px 0 10px;
     
 }
 .photo-card{
     display: flex;
-  
-    flex-wrap: wrap;
-    align-items: stretch;
-    justify-content: center; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 15%;
+    background-color: rgb(242, 247, 247);
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+   
+   
 
 }
+.photo-card img{
+    padding-top: 5px;
+    display: block;
+    width: 80%;
+    height: 80%;
+    object-fit: cover;
+   
+}
 .info{
-  
+display: flex;
+
+
+
+}
+
+.info-item{
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: space-around;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
+    &:not(:last-child){
+        margin-right: 25px;
+    }
+ 
   
+  
+    
 }
 
 

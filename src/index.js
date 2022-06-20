@@ -19,21 +19,43 @@ const imgApiService = new ImgApiService();
 refs.searchForm.addEventListener('submit', onSearchSubmit)
 refs.loadBtn.addEventListener('click', onLoadMore)
 
+const data = imgApiService.fetchImages();
+console.log(data.then(data.totalHits));
+
 
 
 function onSearchSubmit(e) {
-    e.preventDefault();
-    imgApiService.query = refs.searchInput.value;
-    imgApiService.resetPage();
-    imgApiService.fetchImages(imgApiService.query, imgApiService.page, imgApiService.perPage).then(appendImgMarkup);
+  e.preventDefault();
+  clearContainer();
 
-    
+
+  
+ 
+  imgApiService.query = refs.searchInput.value;
+  imgApiService.resetPage();
+  imgApiService.fetchImages(imgApiService.query, imgApiService.page, imgApiService.perPage)
+    .then(appendImgMarkup)
+
+
+
+
 }
+
 
 
 function onLoadMore() {
-    imgApiService.fetchImages(imgApiService.query, imgApiService.page, imgApiService.perPage).then(appendImgMarkup);   
+
+  imgApiService.fetchImages(imgApiService.query, imgApiService.page, imgApiService.perPage)
+    .then(appendImgMarkup)
+ 
+
 }
+
+
+
+
+
+
 
 function appendImgMarkup(images) {
     
@@ -43,16 +65,20 @@ function appendImgMarkup(images) {
   <img src="${webformatURL}" alt="${tags}" loading="lazy" />
   <div class="info">
     <p class="info-item">
-      <b>Likes: ${likes}</b>
+      <b>Likes:</b>
+      <b>${likes}</b>
     </p>
     <p class="info-item">
-      <b>Views: ${views}</b>
+      <b>Views:</b>
+      <b>${views}</b>
     </p>
     <p class="info-item">
-      <b>Comments: ${comments}</b>
+      <b>Comments:</b>
+      <b>${comments}</b>
     </p>
     <p class="info-item">
-      <b>Downloads: ${downloads}</b>
+      <b>Downloads:</b>
+      <b>${downloads}</b>
     </p>
   </div>
 </div>
@@ -61,6 +87,19 @@ function appendImgMarkup(images) {
     return refs.gallaryList.insertAdjacentHTML('beforeend', markup);
 
 }
+
+function removeBtn() {
+   refs.loadBtn.classList.remove('is-hidden');
+}
+
+function clearContainer() {
+  refs.gallaryList.innerHTML = '';
+}
+
+
+
+
+
 
 //     const markup = `
 //     <div class="photo-card">
