@@ -15,9 +15,6 @@
     margin: 10px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
-   
-   
-
 }
 .photo-card img{
     padding-top: 5px;
@@ -32,6 +29,7 @@ display: flex;
 
 
 
+
 }
 
 .info-item{
@@ -42,6 +40,11 @@ display: flex;
     &:not(:last-child){
         margin-right: 25px;
     }
+    font-size: 14px;
+    color: #000;
+    font-weight: regular;
+    text-align: center;
+
  
   
   
