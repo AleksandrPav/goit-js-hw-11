@@ -21,14 +21,7 @@ export default class ImgApiService {
   
   }
 
-  noImgFound() {
-    if(this.totalHits === 0) {
-     return Notiflix.Notify.failure('Sorry, there are no images matching your search query. Please try again.');
-    }
-  
-  
 
-}
 
   incrementPage() {
     this.page += 1;

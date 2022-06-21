@@ -110,9 +110,6 @@ function noMoreImg() {
   LoadMoreButton.hide();
 }
 
-function succssess(data) {
-  Notiflix.Notify.success(`Hooray! We found ${data.totalHits} images.`);
-}
 
 
 
